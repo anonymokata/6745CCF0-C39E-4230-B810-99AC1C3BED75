@@ -1,0 +1,25 @@
+#include "stdlib.h"
+#include "roman_calculator.h"
+
+#test roman_additionTwoRomanNumeralsTogether
+    ck_assert_str_eq(roman_addition("CCCLXIX", "DCCCXLV"), "MCCXIV");
+#test roman_additionIIandVequalVII
+    ck_assert_str_eq(roman_addition("II", "V"), "VII");
+#test roman_additionIIIIandVequalIX
+    ck_assert_str_eq(roman_addition("IIII", "V"), "IX");
+#test roman_additionLIIandVequalCIII
+    ck_assert_str_eq(roman_addition("LII", "LI"), "CIII");
+#test roman_additionMCLIIandCLIXequalMCCCXI
+    ck_assert_str_eq(roman_addition("MCLII", "CLIX"), "MCCCXI");
+
+
+#test roman_subtractsTheSecondRomanNumeral
+    ck_assert_str_eq(roman_subtraction("CCCLXIX", "DCCCXLV"), "CDXCIV");
+#test roman_subtractIIandVequalVII
+    ck_assert_str_eq(roman_subtraction("II", "V"), "III");
+#test roman_subtractIIIIandVequalIX
+    ck_assert_str_eq(roman_subtraction("IIII", "V"), "I");
+#test roman_subtractLIIandVequalCIII
+    ck_assert_str_eq(roman_subtraction("LII", "LI"), "I");
+#test roman_subtractMCLIIandCLIXequalMCCCXI
+    ck_assert_str_eq(roman_subtraction("MCLII", "CLIX"), "CMCXI");

@@ -1,0 +1,2 @@
+int getposition(const char *array, char c);
+char *str_replace(char *orig, char *rep, char *with);

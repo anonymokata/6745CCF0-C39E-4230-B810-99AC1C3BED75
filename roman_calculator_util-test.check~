@@ -1,0 +1,70 @@
+#include "roman_calculator_util.h"
+
+#test sortMDCLXI_to_MDCLXI
+    ck_assert_str_eq(sort("MDCLXI"), "MDCLXI");
+
+#test sortIXLCDM_to_MDCLXI
+    ck_assert_str_eq(sort("IXLCDM"), "MDCLXI");
+
+#test sortCCLL_to_CCLL
+    ck_assert_str_eq(sort("CCLL"), "CCLL");
+
+#test sortMIIX_to_MXII
+    ck_assert_str_eq(sort("MIIX"), "MXII");
+
+#test sortVVMCD_to_MDCVV
+    ck_assert_str_eq(sort("VVMCD"), "MDCVV");
+
+
+#test expandsIX_to_VIIII
+    ck_assert_str_eq(expand("IX"), "VIIII");
+
+#test expandsIV_to_IIII
+    ck_assert_str_eq(expand("IV"), "IIII");
+
+#test expandsXC_to_LXXXX
+    ck_assert_str_eq(expand("XC"), "LXXXX");
+
+#test expandsXL_to_XXXX
+    ck_assert_str_eq(expand("XL"), "XXXX");
+
+#test expandsCM_to_DCCCC
+    ck_assert_str_eq(expand("CM"), "DCCCC");
+
+#test expandsCD_to_CCCC
+    ck_assert_str_eq(expand("CD"), "CCCC");
+
+
+
+#test groupsVV_to_X
+    ck_assert_str_eq(group("VV"), "X");
+
+#test groupsXXXXX_to_L
+    ck_assert_str_eq(group("XXXXX"), "L");
+
+#test groupsLL_to_C
+    ck_assert_str_eq(group("LL"), "C");
+
+#test groupsCCCCC_to_D
+    ck_assert_str_eq(group("CCCCC"), "D");
+
+#test groupsDD_to_M
+    ck_assert_str_eq(group("DD"), "M");
+
+#test shortensVIIII_to_IX
+    ck_assert_str_eq(shorten("VIIII"), "IX");
+#test shortensIIII_to_IV
+    ck_assert_str_eq(shorten("IIII"), "IV");
+
+#test shortensLXXXX_to_XC
+    ck_assert_str_eq(shorten("LXXXX"), "XC");
+
+#test shortensXXXX_to_XL
+    ck_assert_str_eq(shorten("XXXX"), "XL");
+
+#test shortensDCCCC_to_CM
+    ck_assert_str_eq(shorten("DCCCC"), "CM");
+
+#test shortensCCCC_to_CD
+    ck_assert_str_eq(shorten("CCCC"), "CD");
+

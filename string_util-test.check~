@@ -1,0 +1,13 @@
+#include "stdlib.h"
+#include "string_util.h"
+
+#test str_replaceVIIII_to_IX
+	ck_assert_str_eq(str_replace("DVIIII","VIIII","IX"), "DIX");
+
+#test str_replaceCCCC_to_CD
+	ck_assert_str_eq(str_replace("CCCC","CCCC","CD"), "CD");
+
+#test str_replaceMLLXI_to_MCXI
+	ck_assert_str_eq(str_replace("MLLXI","LL","C"), "MCXI");
+
+
