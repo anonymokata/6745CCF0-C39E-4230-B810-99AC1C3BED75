@@ -11,8 +11,8 @@ make -f roman_calculator.makefile test
 You can run the main using 
 ```
 
-./romanNumeralCalculator
+./roman_calculator
 
-./romanNumeralCalculator-test
-./romanSymbolUtils-test 
-./stringUtils-test
+./roman_calculator-test
+./roman_calculator_utils-test 
+./string_utils-test
