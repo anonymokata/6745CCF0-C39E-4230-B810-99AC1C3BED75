@@ -28,19 +28,19 @@ char* group(char* number) {
         return number;
     }
 char* ungroup(char* number) {
-        char* test;
+        int check=1;
         while(1)
         {
-        test=NULL;
-        test = (char*)malloc(strlen(number)*sizeof(char));
-        strcpy(test,number);
         for(int i=0; i <=5; i++) {
             number = str_replace(number,GROUP[i],UNGROUP[i]);
-                }
 
-        if (strcmp(test, number) == 0)
+                }
+        if (strchr(number,'M')||strchr(number,'D')||strchr(number,'C')||strchr(number,'L')||strchr(number,'X')||strchr(number,'V'))
+            check=0;
+        else
+            check=1;
+        if (check == 1)
             break;
-        free(test);
         }
         return number;
     }

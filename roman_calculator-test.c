@@ -78,6 +78,21 @@ START_TEST(roman_subtractMCLIIandCLIXequalMCCCXI)
 {
 #line 25
     ck_assert_str_eq(roman_subtraction("MCLII", "CLIX"), "CMXCI");
+
+}
+END_TEST
+
+START_TEST(roman_subtractDandIequalCDXCIX)
+{
+#line 28
+    ck_assert_str_eq(roman_subtraction("D", "I"), "CDXCIX");
+}
+END_TEST
+
+START_TEST(roman_subtractMandIequalCDXCIX)
+{
+#line 30
+    ck_assert_str_eq(roman_subtraction("M", "I"), "CMXCIX");
 }
 END_TEST
 
@@ -99,6 +114,8 @@ int main(void)
     tcase_add_test(tc1_1, roman_subtractIIIIandVequalIX);
     tcase_add_test(tc1_1, roman_subtractLIIandVequalCIII);
     tcase_add_test(tc1_1, roman_subtractMCLIIandCLIXequalMCCCXI);
+    tcase_add_test(tc1_1, roman_subtractDandIequalCDXCIX);
+    tcase_add_test(tc1_1, roman_subtractMandIequalCDXCIX);
 
     srunner_run_all(sr, CK_ENV);
     nf = srunner_ntests_failed(sr);
