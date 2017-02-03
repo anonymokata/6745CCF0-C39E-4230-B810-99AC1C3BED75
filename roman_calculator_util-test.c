@@ -37,7 +37,53 @@ START_TEST(sortMIIX_to_MXII)
 #line 13
     ck_assert_str_eq(sort("MIIX"), "MXII");
 
+}
+END_TEST
 
+START_TEST(expandsIX_to_VIIII)
+{
+#line 16
+    ck_assert_str_eq(expand("IX"), "VIIII");
+
+}
+END_TEST
+
+START_TEST(expandsIV_to_IIII)
+{
+#line 19
+    ck_assert_str_eq(expand("IV"), "IIII");
+
+}
+END_TEST
+
+START_TEST(expandsXC_to_LXXXX)
+{
+#line 22
+    ck_assert_str_eq(expand("XC"), "LXXXX");
+
+}
+END_TEST
+
+START_TEST(expandsXL_to_XXXX)
+{
+#line 25
+    ck_assert_str_eq(expand("XL"), "XXXX");
+
+}
+END_TEST
+
+START_TEST(expandsCM_to_DCCCC)
+{
+#line 28
+    ck_assert_str_eq(expand("CM"), "DCCCC");
+
+}
+END_TEST
+
+START_TEST(expandsCD_to_CCCC)
+{
+#line 31
+    ck_assert_str_eq(expand("CD"), "CCCC");
 
 
 }
@@ -55,6 +101,12 @@ int main(void)
     tcase_add_test(tc1_1, sortIXLCDM_to_MDCLXI);
     tcase_add_test(tc1_1, sortCCLL_to_CCLL);
     tcase_add_test(tc1_1, sortMIIX_to_MXII);
+    tcase_add_test(tc1_1, expandsIX_to_VIIII);
+    tcase_add_test(tc1_1, expandsIV_to_IIII);
+    tcase_add_test(tc1_1, expandsXC_to_LXXXX);
+    tcase_add_test(tc1_1, expandsXL_to_XXXX);
+    tcase_add_test(tc1_1, expandsCM_to_DCCCC);
+    tcase_add_test(tc1_1, expandsCD_to_CCCC);
 
     srunner_run_all(sr, CK_ENV);
     nf = srunner_ntests_failed(sr);

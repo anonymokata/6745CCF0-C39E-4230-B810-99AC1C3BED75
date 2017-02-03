@@ -12,7 +12,6 @@
 #test sortMIIX_to_MXII
     ck_assert_str_eq(sort("MIIX"), "MXII");
 
-#test sortVVMCD_to_MDCVV
-    ck_assert_str_eq(sort("VVMCD"), "MDCVV");
+
 
 
