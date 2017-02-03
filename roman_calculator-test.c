@@ -43,7 +43,41 @@ START_TEST(roman_additionMCLIIandCLIXequalMCCCXI)
     ck_assert_str_eq(roman_addition("MCLII", "CLIX"), "MCCCXI");
 
 
+}
+END_TEST
 
+START_TEST(roman_subtractsTheSecondRomanNumeral)
+{
+#line 17
+    ck_assert_str_eq(roman_subtraction("CCCLXIX", "DCCCXLV"), "CDXCIV");
+}
+END_TEST
+
+START_TEST(roman_subtractIIandVequalVII)
+{
+#line 19
+    ck_assert_str_eq(roman_subtraction("II", "V"), "III");
+}
+END_TEST
+
+START_TEST(roman_subtractIIIIandVequalIX)
+{
+#line 21
+    ck_assert_str_eq(roman_subtraction("IIII", "V"), "I");
+}
+END_TEST
+
+START_TEST(roman_subtractLIIandVequalCIII)
+{
+#line 23
+    ck_assert_str_eq(roman_subtraction("LII", "LI"), "I");
+}
+END_TEST
+
+START_TEST(roman_subtractMCLIIandCLIXequalMCCCXI)
+{
+#line 25
+    ck_assert_str_eq(roman_subtraction("MCLII", "CLIX"), "CMXCI");
 }
 END_TEST
 
@@ -60,6 +94,11 @@ int main(void)
     tcase_add_test(tc1_1, roman_additionIIIIandVequalIX);
     tcase_add_test(tc1_1, roman_additionLIIandVequalCIII);
     tcase_add_test(tc1_1, roman_additionMCLIIandCLIXequalMCCCXI);
+    tcase_add_test(tc1_1, roman_subtractsTheSecondRomanNumeral);
+    tcase_add_test(tc1_1, roman_subtractIIandVequalVII);
+    tcase_add_test(tc1_1, roman_subtractIIIIandVequalIX);
+    tcase_add_test(tc1_1, roman_subtractLIIandVequalCIII);
+    tcase_add_test(tc1_1, roman_subtractMCLIIandCLIXequalMCCCXI);
 
     srunner_run_all(sr, CK_ENV);
     nf = srunner_ntests_failed(sr);
