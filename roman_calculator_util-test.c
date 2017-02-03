@@ -127,6 +127,50 @@ START_TEST(groupsDD_to_M)
 #line 48
     ck_assert_str_eq(group("DD"), "M");
 
+
+
+
+}
+END_TEST
+
+START_TEST(shortensIIII_to_IV)
+{
+#line 54
+    ck_assert_str_eq(shorten("IIII"), "IV");
+
+}
+END_TEST
+
+START_TEST(shortensLXXXX_to_XC)
+{
+#line 57
+    ck_assert_str_eq(shorten("LXXXX"), "XC");
+
+}
+END_TEST
+
+START_TEST(shortensXXXX_to_XL)
+{
+#line 60
+    ck_assert_str_eq(shorten("XXXX"), "XL");
+
+}
+END_TEST
+
+START_TEST(shortensDCCCC_to_CM)
+{
+#line 63
+    ck_assert_str_eq(shorten("DCCCC"), "CM");
+
+}
+END_TEST
+
+START_TEST(shortensCCCC_to_CD)
+{
+#line 66
+    ck_assert_str_eq(shorten("CCCC"), "CD");
+
+
 }
 END_TEST
 
@@ -153,6 +197,11 @@ int main(void)
     tcase_add_test(tc1_1, groupsLL_to_C);
     tcase_add_test(tc1_1, groupsCCCCC_to_D);
     tcase_add_test(tc1_1, groupsDD_to_M);
+    tcase_add_test(tc1_1, shortensIIII_to_IV);
+    tcase_add_test(tc1_1, shortensLXXXX_to_XC);
+    tcase_add_test(tc1_1, shortensXXXX_to_XL);
+    tcase_add_test(tc1_1, shortensDCCCC_to_CM);
+    tcase_add_test(tc1_1, shortensCCCC_to_CD);
 
     srunner_run_all(sr, CK_ENV);
     nf = srunner_ntests_failed(sr);

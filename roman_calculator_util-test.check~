@@ -31,3 +31,19 @@
     ck_assert_str_eq(expand("CD"), "CCCC");
 
 
+
+#test groupsVV_to_X
+    ck_assert_str_eq(group("VV"), "X");
+
+#test groupsXXXXX_to_L
+    ck_assert_str_eq(group("XXXXX"), "L");
+
+#test groupsLL_to_C
+    ck_assert_str_eq(group("LL"), "C");
+
+#test groupsCCCCC_to_D
+    ck_assert_str_eq(group("CCCCC"), "D");
+
+#test groupsDD_to_M
+    ck_assert_str_eq(group("DD"), "M");
+

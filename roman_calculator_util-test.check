@@ -47,3 +47,22 @@
 #test groupsDD_to_M
     ck_assert_str_eq(group("DD"), "M");
 
+
+
+
+#test shortensIIII_to_IV
+    ck_assert_str_eq(shorten("IIII"), "IV");
+
+#test shortensLXXXX_to_XC
+    ck_assert_str_eq(shorten("LXXXX"), "XC");
+
+#test shortensXXXX_to_XL
+    ck_assert_str_eq(shorten("XXXX"), "XL");
+
+#test shortensDCCCC_to_CM
+    ck_assert_str_eq(shorten("DCCCC"), "CM");
+
+#test shortensCCCC_to_CD
+    ck_assert_str_eq(shorten("CCCC"), "CD");
+
+
