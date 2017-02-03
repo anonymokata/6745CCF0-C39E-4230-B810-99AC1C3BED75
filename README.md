@@ -14,5 +14,5 @@ You can run the main using
 ./roman_calculator
 
 ./roman_calculator-test
-./roman_calculator_utils-test 
-./string_utils-test
+./roman_calculator_util-test 
+./string_util-test
