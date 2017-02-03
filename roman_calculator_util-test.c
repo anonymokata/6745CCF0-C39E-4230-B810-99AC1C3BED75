@@ -86,6 +86,47 @@ START_TEST(expandsCD_to_CCCC)
     ck_assert_str_eq(expand("CD"), "CCCC");
 
 
+
+}
+END_TEST
+
+START_TEST(groupsVV_to_X)
+{
+#line 36
+    ck_assert_str_eq(group("VV"), "X");
+
+}
+END_TEST
+
+START_TEST(groupsXXXXX_to_L)
+{
+#line 39
+    ck_assert_str_eq(group("XXXXX"), "L");
+
+}
+END_TEST
+
+START_TEST(groupsLL_to_C)
+{
+#line 42
+    ck_assert_str_eq(group("LL"), "C");
+
+}
+END_TEST
+
+START_TEST(groupsCCCCC_to_D)
+{
+#line 45
+    ck_assert_str_eq(group("CCCCC"), "D");
+
+}
+END_TEST
+
+START_TEST(groupsDD_to_M)
+{
+#line 48
+    ck_assert_str_eq(group("DD"), "M");
+
 }
 END_TEST
 
@@ -107,6 +148,11 @@ int main(void)
     tcase_add_test(tc1_1, expandsXL_to_XXXX);
     tcase_add_test(tc1_1, expandsCM_to_DCCCC);
     tcase_add_test(tc1_1, expandsCD_to_CCCC);
+    tcase_add_test(tc1_1, groupsVV_to_X);
+    tcase_add_test(tc1_1, groupsXXXXX_to_L);
+    tcase_add_test(tc1_1, groupsLL_to_C);
+    tcase_add_test(tc1_1, groupsCCCCC_to_D);
+    tcase_add_test(tc1_1, groupsDD_to_M);
 
     srunner_run_all(sr, CK_ENV);
     nf = srunner_ntests_failed(sr);
