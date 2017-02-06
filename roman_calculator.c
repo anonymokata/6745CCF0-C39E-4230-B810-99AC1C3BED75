@@ -27,7 +27,8 @@ char* roman_subtraction(char* a, char* b)
 {
     char *sub;
     int number=0,i;
-
+    a=expand(a);
+    b=expand(b);
 
     a= ungroup(a);
     b = ungroup(b);

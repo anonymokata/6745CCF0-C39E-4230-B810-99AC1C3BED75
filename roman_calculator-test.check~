@@ -14,7 +14,7 @@
 
 
 #test roman_subtractsTheSecondRomanNumeral
-    ck_assert_str_eq(roman_subtraction("CCCLXIX", "DCCCXLV"), "CDXCIV");
+    ck_assert_str_eq(roman_subtraction("CCCLXIX", "DCCCXLV"), "CDLXXVI");
 #test roman_subtractIIandVequalVII
     ck_assert_str_eq(roman_subtraction("II", "V"), "III");
 #test roman_subtractIIIIandVequalIX
@@ -27,4 +27,7 @@
 #test roman_subtractDandIequalCDXCIX
     ck_assert_str_eq(roman_subtraction("D", "I"), "CDXCIX");
 #test roman_subtractMandIequalCDXCIX
-    ck_assert_str_eq(roman_subtraction("MM", "D"), "MD");
+    ck_assert_str_eq(roman_subtraction("M", "I"), "CMXCIX");
+
+#test roman_subtractionMMtoMCDVIIequalDXCIII
+	ck_assert_str_eq(roman_subtraction("MM", "MCDVII"), "DXCIII");
